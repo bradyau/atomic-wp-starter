@@ -13,7 +13,10 @@ required_files=(
   404.php
   archive.php
   assets/css/site.css
+	assets/css/login.css
+	assets/brand/atomic-studio-mark-black.svg
   assets/js/site.js
+	comments.php
   footer.php
   front-page.php
   functions.php
@@ -49,6 +52,34 @@ if (($data["version"] ?? null) !== 2) {
 
 if ! grep -q '^Text Domain: atomic-wp-starter$' style.css; then
   echo "Theme text domain is missing or inconsistent." >&2
+  exit 1
+fi
+
+if ! grep -Fq "add_theme_support( 'title-tag' );" functions.php || \
+	! grep -Fq "add_theme_support( 'automatic-feed-links' );" functions.php || \
+	! grep -Fq '<?php wp_head(); ?>' header.php || \
+	! grep -Fq '<?php language_attributes(); ?>' header.php; then
+  echo "The core discovery and document-head foundation is incomplete." >&2
+  exit 1
+fi
+
+if grep -R -E "<title>|rel=['\"]canonical['\"]|application/ld\\+json|<meta[^>]+robots" \
+  --include='*.php' --exclude-dir=vendor --exclude-dir=dist . >/dev/null; then
+  echo "Theme PHP must not compete with WordPress core or an SEO plugin for metadata ownership." >&2
+  exit 1
+fi
+
+if grep -R -E '<h1|\"level\":1' --include='*.php' patterns >/dev/null; then
+  echo "Reusable block patterns must not claim the template-owned H1." >&2
+  exit 1
+fi
+
+if ! grep -Fq 'atomic_wp_starter_enable_comments' inc/site-features.php || \
+	! grep -Fq "unset( \$methods['pingback.ping']" inc/site-features.php || \
+	! grep -Fq "add_filter( 'emoji_svg_url', '__return_false' );" inc/site-features.php || \
+	! grep -Fq 'comments_template();' single.php || \
+  ! grep -Fq 'comments_template();' page.php; then
+  echo "Lean discussion, pingback, or emoji safeguards are incomplete." >&2
   exit 1
 fi
 

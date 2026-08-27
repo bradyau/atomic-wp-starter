@@ -16,8 +16,8 @@
 	<p class="eyebrow"><?php esc_html_e( 'A clear point of view', 'atomic-wp-starter' ); ?></p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:heading {"level":1,"fontSize":"x-large"} -->
-	<h1 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Lead with the idea that matters most.', 'atomic-wp-starter' ); ?></h1>
+	<!-- wp:heading {"level":2,"fontSize":"x-large"} -->
+	<h2 class="wp-block-heading has-x-large-font-size"><?php esc_html_e( 'Lead with the idea that matters most.', 'atomic-wp-starter' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"fontSize":"large","style":{"spacing":{"margin":{"right":"30%"}}}} -->

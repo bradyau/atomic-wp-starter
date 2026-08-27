@@ -27,6 +27,7 @@ theme_entries=(
   archive.php
   assets
   CHANGELOG.md
+  comments.php
   CONTRIBUTING.md
   footer.php
   front-page.php
