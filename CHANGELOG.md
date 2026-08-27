@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-08-27
+
 ### Added
 
 - Initial classic/hybrid theme architecture
@@ -28,3 +30,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Removed comment API surfaces while comments are disabled
 
 [Unreleased]: https://github.com/bradyau/atomic-wp-starter/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/bradyau/atomic-wp-starter/releases/tag/v1.0.0
