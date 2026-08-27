@@ -12,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'ATOMIC_WP_STARTER_VERSION', '1.0.0' );
 
 require_once get_template_directory() . '/inc/template-tags.php';
+require_once get_template_directory() . '/inc/site-features.php';
+require_once get_template_directory() . '/inc/login-branding.php';
 
 /**
  * Configure theme supports and navigation locations.
@@ -20,6 +22,7 @@ function atomic_wp_starter_setup(): void {
 	load_theme_textdomain( 'atomic-wp-starter', get_template_directory() . '/languages' );
 
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
@@ -29,6 +32,8 @@ function atomic_wp_starter_setup(): void {
 		'html5',
 		array(
 			'search-form',
+			'comment-list',
+			'comment-form',
 			'gallery',
 			'caption',
 			'script',
@@ -86,6 +91,10 @@ function atomic_wp_starter_assets(): void {
 			'strategy'  => 'defer',
 		)
 	);
+
+	if ( atomic_wp_starter_comments_enabled() && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'atomic_wp_starter_assets' );
 
@@ -106,89 +115,3 @@ function atomic_wp_starter_page_menu( array $args ): void {
 	);
 	echo '</ul>';
 }
-
-/**
- * Remove comment support for this brochure-site starter.
- */
-function atomic_wp_starter_disable_comments(): void {
-	foreach ( get_post_types( array(), 'names' ) as $post_type ) {
-		if ( post_type_supports( $post_type, 'comments' ) ) {
-			remove_post_type_support( $post_type, 'comments' );
-			remove_post_type_support( $post_type, 'trackbacks' );
-		}
-	}
-}
-add_action( 'admin_init', 'atomic_wp_starter_disable_comments' );
-add_filter( 'comments_open', '__return_false', 20 );
-add_filter( 'pings_open', '__return_false', 20 );
-add_filter( 'comments_array', '__return_empty_array', 10 );
-
-/**
- * Remove comment administration surfaces.
- */
-function atomic_wp_starter_remove_comment_admin(): void {
-	remove_menu_page( 'edit-comments.php' );
-}
-add_action( 'admin_menu', 'atomic_wp_starter_remove_comment_admin' );
-
-/**
- * Remove the comments shortcut from the admin bar.
- *
- * @param WP_Admin_Bar $wp_admin_bar Admin bar instance.
- */
-function atomic_wp_starter_remove_comment_toolbar( WP_Admin_Bar $wp_admin_bar ): void {
-	$wp_admin_bar->remove_node( 'comments' );
-}
-add_action( 'admin_bar_menu', 'atomic_wp_starter_remove_comment_toolbar', 999 );
-
-/**
- * Remove legacy emoji assets from the public site.
- */
-function atomic_wp_starter_disable_emojis(): void {
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-}
-add_action( 'init', 'atomic_wp_starter_disable_emojis' );
-
-/**
- * Match the login mark to the configured site logo.
- */
-function atomic_wp_starter_login_logo(): void {
-	$logo_id  = get_theme_mod( 'custom_logo' );
-	$logo_url = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : '';
-
-	if ( ! $logo_url ) {
-		return;
-	}
-	?>
-	<style>
-		.login h1 a {
-			background-image: url('<?php echo esc_url( $logo_url ); ?>');
-			background-size: contain;
-			height: 80px;
-			width: min(320px, 80vw);
-		}
-	</style>
-	<?php
-}
-add_action( 'login_enqueue_scripts', 'atomic_wp_starter_login_logo' );
-
-/**
- * Send the login logo to the site homepage.
- */
-function atomic_wp_starter_login_logo_url(): string {
-	return home_url( '/' );
-}
-add_filter( 'login_headerurl', 'atomic_wp_starter_login_logo_url' );
-
-/**
- * Provide an accurate label for the login logo.
- */
-function atomic_wp_starter_login_logo_label(): string {
-	return get_bloginfo( 'name' );
-}
-add_filter( 'login_headertext', 'atomic_wp_starter_login_logo_label' );

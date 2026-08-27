@@ -4,6 +4,7 @@
 
   <file>404.php</file>
   <file>archive.php</file>
+  <file>comments.php</file>
   <file>footer.php</file>
   <file>front-page.php</file>
   <file>functions.php</file>

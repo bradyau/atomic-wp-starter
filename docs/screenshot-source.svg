@@ -4,7 +4,11 @@
   <rect width="1200" height="900" fill="#f5f2eb"/>
   <rect x="0" y="0" width="1200" height="88" fill="#f5f2eb"/>
   <line x1="0" y1="88" x2="1200" y2="88" stroke="#d7d8d1" stroke-width="2"/>
-  <text x="72" y="55" fill="#171916" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">ATOMIC WP STARTER</text>
+	<g transform="translate(72 18) scale(.38)" fill="none" stroke="#171916" stroke-linecap="square" stroke-linejoin="round" stroke-width="8">
+		<path d="M8 96 38 18c2.6-6.8 10.2-6.9 13 0l22 57c4.8 12.5 15.4 20 29.3 20 18.2 0 31.7-8.5 31.7-23.3 0-13.6-9.8-20.2-27.6-24.1l-10.3-2.3C81 42 73.7 34.6 73.7 24.5 73.7 11.6 84.4 4 99.2 4c12.5 0 23.2 3.3 32.8 10.6"/>
+	</g>
+	<text x="137" y="47" fill="#171916" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">ATOMIC WP STARTER</text>
+	<text x="137" y="69" fill="#5f655d" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">BY ATOMIC STUDIO</text>
   <g fill="#171916" font-family="Arial, sans-serif" font-size="16" font-weight="600">
     <text x="875" y="55">Approach</text>
     <text x="981" y="55">Work</text>

@@ -36,6 +36,9 @@ get_header();
 		<div class="post-navigation-wrap layout-content">
 			<?php the_post_navigation(); ?>
 		</div>
+		<?php if ( atomic_wp_starter_comments_enabled() && ( comments_open() || get_comments_number() ) ) : ?>
+			<?php comments_template(); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 </main>
 
