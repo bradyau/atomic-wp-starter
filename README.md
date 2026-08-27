@@ -1,6 +1,6 @@
 # Atomic WP Starter
 
-An opinionated, lightweight WordPress theme starter for accessible, high-performance marketing sites.
+A focused, lightweight WordPress theme starter for accessible, high-performance marketing sites.
 
 The starter favors semantic PHP templates, native CSS, small vanilla JavaScript, and WordPress-owned content. It provides enough structure to begin a considered project without bringing a page builder or front-end framework along for the ride.
 
