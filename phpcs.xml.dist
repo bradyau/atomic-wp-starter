@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset name="Atomic WP Starter">
+  <description>WordPress coding standards for the Atomic WP Starter theme.</description>
+
+  <file>404.php</file>
+  <file>archive.php</file>
+  <file>footer.php</file>
+  <file>front-page.php</file>
+  <file>functions.php</file>
+  <file>header.php</file>
+  <file>inc</file>
+  <file>index.php</file>
+  <file>page-info.php</file>
+  <file>page.php</file>
+  <file>patterns</file>
+  <file>search.php</file>
+  <file>searchform.php</file>
+  <file>single.php</file>
+  <file>template-parts</file>
+
+  <arg name="basepath" value="."/>
+  <arg name="colors"/>
+  <arg name="extensions" value="php"/>
+  <arg value="ps"/>
+
+  <rule ref="WordPress">
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+  </rule>
+  <rule ref="WordPress-Docs"/>
+  <rule ref="WordPress-Extra"/>
+
+  <config name="minimum_supported_wp_version" value="6.4"/>
+</ruleset>

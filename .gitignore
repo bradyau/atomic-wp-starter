@@ -1,0 +1,13 @@
+/vendor/
+/dist/
+/.idea/
+/.vscode/
+/.DS_Store
+*.log
+*.sql
+*.sqlite
+*.zip
+.env
+.env.*
+!.env.example
+wp-config.php

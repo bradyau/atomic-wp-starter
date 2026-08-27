@@ -1,0 +1,44 @@
+name: Verify theme
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@2.36.0
+        with:
+          php-version: '8.0'
+          coverage: none
+          tools: composer:v2
+
+      - name: Install development dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Audit development dependencies
+        run: composer audit --no-interaction
+
+      - name: Verify source
+        run: composer check
+
+      - name: Package theme
+        run: composer package
+
+      - name: Upload installable theme
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: atomic-wp-starter
+          path: dist/atomic-wp-starter.zip
+          if-no-files-found: error

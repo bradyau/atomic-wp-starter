@@ -1,0 +1,16 @@
+/*
+Theme Name: Atomic WP Starter
+Theme URI: https://github.com/bradyau/atomic-wp-starter
+Author: Brad Yau
+Author URI: https://bradyau.com/
+Description: A lightweight WordPress starter for accessible, high-performance marketing sites.
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: atomic-wp-starter
+Tags: custom-logo, custom-menu, featured-images, translation-ready
+*/
+
+/* Front-end styles live in assets/css/site.css. */

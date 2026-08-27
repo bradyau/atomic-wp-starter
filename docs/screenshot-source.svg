@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title description">
+  <title id="title">Atomic WP Starter theme preview</title>
+  <desc id="description">A restrained editorial homepage with a cream background, dark green typography, and a split content section.</desc>
+  <rect width="1200" height="900" fill="#f5f2eb"/>
+  <rect x="0" y="0" width="1200" height="88" fill="#f5f2eb"/>
+  <line x1="0" y1="88" x2="1200" y2="88" stroke="#d7d8d1" stroke-width="2"/>
+  <text x="72" y="55" fill="#171916" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">ATOMIC WP STARTER</text>
+  <g fill="#171916" font-family="Arial, sans-serif" font-size="16" font-weight="600">
+    <text x="875" y="55">Approach</text>
+    <text x="981" y="55">Work</text>
+    <text x="1050" y="55">Contact</text>
+  </g>
+  <text x="72" y="210" fill="#5f655d" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3">A CONSIDERED STARTING POINT</text>
+  <text x="68" y="352" fill="#171916" font-family="Georgia, serif" font-size="112">Build from a</text>
+  <text x="68" y="470" fill="#171916" font-family="Georgia, serif" font-size="112">clear foundation.</text>
+  <text x="72" y="545" fill="#5f655d" font-family="Arial, sans-serif" font-size="24">Lean WordPress structure for accessible, high-performance</text>
+  <text x="72" y="581" fill="#5f655d" font-family="Arial, sans-serif" font-size="24">marketing sites.</text>
+  <line x1="72" y1="684" x2="1128" y2="684" stroke="#d7d8d1" stroke-width="2"/>
+  <text x="72" y="747" fill="#5f655d" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">START WITH THE ESSENTIALS</text>
+  <text x="72" y="815" fill="#171916" font-family="Georgia, serif" font-size="47">Purposeful structure.</text>
+  <text x="665" y="756" fill="#171916" font-family="Arial, sans-serif" font-size="19">Semantic templates. Native CSS.</text>
+  <text x="665" y="791" fill="#171916" font-family="Arial, sans-serif" font-size="19">Small scripts. Explicit quality gates.</text>
+  <rect x="665" y="829" rx="25" ry="25" width="162" height="50" fill="#171916"/>
+  <text x="696" y="861" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Explore theme</text>
+</svg>

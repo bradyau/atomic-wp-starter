@@ -1,0 +1,28 @@
+{
+  "name": "bradyau/atomic-wp-starter",
+  "description": "A lightweight WordPress starter theme for accessible marketing sites.",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "wp-coding-standards/wpcs": "^3.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "lint:php": "phpcs --standard=phpcs.xml.dist",
+    "test": "bash scripts/verify.sh",
+    "check": [
+      "@test",
+      "@lint:php"
+    ],
+    "package": "bash scripts/package.sh"
+  }
+}
