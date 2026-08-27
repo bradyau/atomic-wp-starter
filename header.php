@@ -4,6 +4,7 @@
  *
  * @package Atomic_WP_Starter
  */
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

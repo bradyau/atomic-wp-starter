@@ -6,11 +6,17 @@
  */
 
 get_header();
+
+$listing_title = single_post_title( '', false );
+
+if ( ! $listing_title ) {
+	$listing_title = get_bloginfo( 'name' );
+}
 ?>
 
 <main id="main" class="site-main listing-page">
 	<header class="listing-header layout-wide">
-		<h1 class="entry-title"><?php echo esc_html( single_post_title( '', false ) ?: get_bloginfo( 'name' ) ); ?></h1>
+		<h1 class="entry-title"><?php echo esc_html( $listing_title ); ?></h1>
 	</header>
 
 	<div class="post-grid layout-wide">

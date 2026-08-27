@@ -4,6 +4,7 @@
  *
  * @package Atomic_WP_Starter
  */
+
 ?>
 <section class="no-results layout-content">
 	<h2><?php esc_html_e( 'Nothing matched yet.', 'atomic-wp-starter' ); ?></h2>

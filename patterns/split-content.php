@@ -5,7 +5,10 @@
  * Categories: text, columns
  * Description: A two-column story section with an editorial heading and practical details.
  * Viewport Width: 1200
+ *
+ * @package Atomic_WP_Starter
  */
+
 ?>
 <!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"var:preset|color|line","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="border-top-color:var(--wp--preset--color--line);border-top-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">

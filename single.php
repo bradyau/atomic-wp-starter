@@ -18,7 +18,15 @@ get_header();
 			</header>
 			<?php if ( has_post_thumbnail() ) : ?>
 				<figure class="entry-featured alignwide">
-					<?php the_post_thumbnail( 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+					<?php
+					the_post_thumbnail(
+						'large',
+						array(
+							'loading'       => 'eager',
+							'fetchpriority' => 'high',
+						)
+					);
+					?>
 				</figure>
 			<?php endif; ?>
 			<div class="entry-content">

@@ -5,7 +5,10 @@
  * Categories: call-to-action, banner
  * Description: A high-contrast closing section with a single action.
  * Viewport Width: 1200
+ *
+ * @package Atomic_WP_Starter
  */
+
 ?>
 <!-- wp:group {"align":"wide","backgroundColor":"ink","textColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}},"border":{"radius":"7px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide has-surface-color has-ink-background-color has-text-color has-background" style="border-radius:7px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">

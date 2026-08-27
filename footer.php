@@ -4,6 +4,7 @@
  *
  * @package Atomic_WP_Starter
  */
+
 ?>
 	<footer class="site-footer">
 		<div class="site-footer__inner layout-wide">
@@ -13,12 +14,12 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'footer',
-					'container'      => 'nav',
+					'theme_location'        => 'footer',
+					'container'             => 'nav',
 					'container_aria_label' => esc_attr__( 'Footer navigation', 'atomic-wp-starter' ),
-					'menu_class'     => 'footer-menu',
-					'fallback_cb'    => false,
-					'depth'          => 1,
+					'menu_class'            => 'footer-menu',
+					'fallback_cb'           => false,
+					'depth'                 => 1,
 				)
 			);
 			?>
