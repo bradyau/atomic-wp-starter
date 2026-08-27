@@ -13,7 +13,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Theme tokens, responsive layout, and accessible primary navigation
 - Editorial hero, split content, and call-to-action block patterns
 - Repository verification, coding standards, and deterministic ZIP packaging
-- Atomic Studio theme-browser and login fallback branding
+- The supplied Atomic Studio lockup as the theme-browser image, plus Atomic Studio login fallback branding
 - An opt-in native comment system controlled from Settings > Discussion
 
 ### Changed
